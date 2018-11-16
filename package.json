@@ -1,19 +1,17 @@
 {
-  "name": "boilerplate",
+  "name": "electron-react-boilerplate",
   "version": "1.0.0",
-  "description": "Boilerplate application",
-  "main": "index.js",
+  "description": "Electron with react library boilerplate",
+  "main": "main.js",
   "scripts": {
     "prestart": "babel-node server/startMessage.js",
-    "start": "npm-run-all --parallel open:src lint:watch test:watch",
-    "open:src": "babel-node server/server.js",
+    "start": "npm-run-all --parallel  lint:watch test:watch electron",
+    "electron":"electron .",
     "lint": "esw  webpac.config.* src server",
     "lint:watch": "npm run lint -- --watch",
     "test": "mocha --reporter progress server/testSetup.js \"src/**/*.test.js\"",
     "test:watch": "npm run test -- --watch"
   },
-  "author": "Abhilash Pandey",
-  "license": "ISC",
   "dependencies": {
     "babel-polyfill": "6.8.0",
     "bootstrap": "3.3.6",
@@ -44,6 +42,7 @@
     "cross-env": "1.0.7",
     "css-loader": "0.23.1",
     "ejsx": "^1.0.0-b2",
+    "electron": "^3.0.9",
     "enzyme": "2.2.0",
     "eslint": "^3.19.0",
     "eslint-plugin-import": "1.6.1",
@@ -51,7 +50,7 @@
     "eslint-watch": "2.1.11",
     "eventsource-polyfill": "0.9.6",
     "expect": "1.19.0",
-    "express": "4.13.4",
+    "express": "^4.16.4",
     "extract-text-webpack-plugin": "1.0.1",
     "file-loader": "0.8.5",
     "jsdom": "8.5.0",
@@ -70,5 +69,11 @@
     "webpack": "1.13.0",
     "webpack-dev-middleware": "1.6.1",
     "webpack-hot-middleware": "2.10.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pandey-abhilash06"
+  },
+  "author": "Abhilash Pandey",
+  "license": "ISC"
 }
